@@ -20,7 +20,7 @@ import java.lang.reflect.*;
 
 public class ExpandableSearchView extends FrameLayout {
     public static final long ANIMATION_DURATION = 200L;
-    private static final int DEFAULT_PADDING = 1; //dp
+    private static final int DEFAULT_PADDING = 3; //dp
     private static final int SEARCH_HANDLE_PADDING = 10; //dp
     private static final long EXPAND_ANIMATION_DURATION = 300L;
 
@@ -129,7 +129,6 @@ public class ExpandableSearchView extends FrameLayout {
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         int height;
-
         if (heightMode == MeasureSpec.EXACTLY) {
             height = heightSize;
         } else if (heightMode == MeasureSpec.AT_MOST) {
@@ -480,7 +479,7 @@ public class ExpandableSearchView extends FrameLayout {
     }
 
     private void search() {
-        if (!isExpanded) {
+        if (!isExpanded || TextUtils.isEmpty(searchEditText.getText().toString())) {
             return;
         }
 

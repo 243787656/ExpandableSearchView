@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         setContentView(R.layout.activity_main);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         expandableSearchView.setOnSearchActionListener(new ExpandableSearchView.OnSearchActionListener() {
             @Override
             public void onSearchAction(String text) {
-                //
                 progressBar.setVisibility(View.VISIBLE);
                 new Handler().postDelayed(new Runnable() {
                     @Override
